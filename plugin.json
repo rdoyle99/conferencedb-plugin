@@ -1,0 +1,93 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "conferencedb",
+  "version": "1.0.0",
+  "description": "Look up which companies sponsor and exhibit at conferences and trade shows, when and where events run, and the sponsorship packages organizers publish.",
+  "author": {
+    "name": "Sales.co",
+    "email": "support@conferencedatabase.com",
+    "url": "https://conferencedatabase.com"
+  },
+  "homepage": "https://conferencedatabase.com",
+  "keywords": ["conferences", "trade shows", "sponsors", "exhibitors", "sponsorship", "events"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "ConferenceDB",
+        "shortDescription": "Conference sponsors, exhibitors and packages",
+        "longDescription": "ConferenceDB is a database of who sponsors and exhibits at conferences and trade shows. Search events by topic, place, year or month and see their dates, city and website. Open one event to see its venue, its organizer, the sponsorship packages and prices the organizer publishes, how many sponsors and exhibitors are listed and which well-known companies are there. Read an event's full list of sponsor and exhibitor companies with their websites and sponsorship level. Look up a company such as salesforce.com to see every conference it sponsors or exhibits at, with its role, the year and what is coming up.\n\nLists are read from each event's own exhibitor directory, sponsor page and prospectus. Results are about companies and events only. They do not include people's names, email addresses or phone numbers. Prices appear only when the organizer has published them, in the currency it published.",
+        "developerName": "Sales.co",
+        "category": "Business & Operations",
+        "capabilities": ["Search conferences by topic, place, year or month", "Sponsorship packages and prices organizers publish", "Sponsors and exhibitors of a conference", "Conferences a company sponsors or exhibits at"],
+        "websiteURL": "https://conferencedatabase.com",
+        "supportURL": "https://conferencedatabase.com/company",
+        "privacyPolicyURL": "https://conferencedatabase.com/privacy-policy",
+        "termsOfServiceURL": "https://conferencedatabase.com/tos",
+        "defaultPrompt": [
+          "What fintech conferences are happening in 2027?",
+          "Which companies sponsor Money20/20 USA?",
+          "Which conferences does Salesforce exhibit at?"
+        ],
+        "brandColor": "#1570EF",
+        "brandColorDark": "#5B9BF5",
+        "composerIcon": "./assets/icon.png",
+        "logo": "./assets/logo.png"
+      },
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Find conferences by topic and year",
+              "prompt": "What fintech conferences are happening in 2027?",
+              "tools_triggered": "search_conferences",
+              "expected_behavior": "Returns the fintech and finance conferences with a 2027 edition, largest company lists first, each with dates, city and country, how many companies are listed and its conferencedatabase.com page. No person's name, email address or phone number appears."
+            },
+            {
+              "description": "Find conferences by place and month",
+              "prompt": "Which conferences are in Las Vegas in March 2027?",
+              "tools_triggered": "search_conferences",
+              "expected_behavior": "Returns the conferences held in Las Vegas in March 2027 (for example Shoptalk Spring and Adobe Summit), each with dates, number of companies listed and its page link."
+            },
+            {
+              "description": "What it costs to sponsor one conference",
+              "prompt": "How much does it cost to sponsor NAB Show?",
+              "tools_triggered": "get_conference",
+              "expected_behavior": "Returns NAB Show's dates and location, the sponsorship packages and prices NAB publishes with the edition year they come from, how many companies are listed and the page link. If an event publishes no prices it says so and gives the median for similar events."
+            },
+            {
+              "description": "Companies that sponsor or exhibit at a conference",
+              "prompt": "Which companies sponsor Money20/20 USA?",
+              "tools_triggered": "get_conference_sponsors",
+              "expected_behavior": "Returns the total number of sponsor companies at Money20/20 USA and the first 25 with their websites and sponsorship level, ordered by how many conferences each is listed at, and says more can be read with offset."
+            },
+            {
+              "description": "Conferences a company sponsors or exhibits at",
+              "prompt": "Which conferences does Salesforce sponsor or exhibit at?",
+              "tools_triggered": "get_company_conferences",
+              "expected_behavior": "Returns Salesforce's conferences newest first with the year, dates, location and its role at each (sponsor or exhibitor), how many are upcoming, and the company page link."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Contact details for a person: the plugin returns companies and events only",
+              "prompt": "Give me the email address of the sponsorship manager at CES."
+            },
+            {
+              "description": "Buying a ticket or booth: the plugin cannot register or purchase",
+              "prompt": "Buy me a ticket to NAB Show and book a booth for my company."
+            },
+            {
+              "description": "Speakers and attendees are people: the plugin lists companies only",
+              "prompt": "List the speakers at Web Summit and where they work."
+            }
+          ]
+        },
+        "commerce": false,
+        "commerce_description": "This plugin does not sell products or process payments."
+      },
+      "publication": {
+        "release_notes": "First release: search conferences by topic, place, year or month; one conference's dates, organizer, published sponsorship packages and top companies; a conference's sponsor and exhibitor companies; and the conferences a company sponsors or exhibits at."
+      }
+    }
+  }
+}
