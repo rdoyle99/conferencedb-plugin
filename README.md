@@ -11,6 +11,7 @@ This plugin connects your agent to the ConferenceDB MCP server at `https://confe
 | `get_conference` | One event: dates, venue, organizer, published sponsorship packages, top companies |
 | `get_conference_sponsors` | The companies that sponsor or exhibit at one event (50 per call, paged) |
 | `get_company_conferences` | The conferences one company sponsors or exhibits at |
+| `find_sponsors_for_event` | For organizers: the companies that sponsor and exhibit at the most conferences like yours |
 
 Company-level data only: no people, emails or phone numbers. Every tool is read-only.
 
@@ -18,6 +19,7 @@ Company-level data only: no people, emails or phone numbers. Every tool is read-
 - "Which companies sponsor Money20/20 USA?"
 - "How much does it cost to sponsor NAB Show?"
 - "Which conferences does Salesforce sponsor or exhibit at?"
+- "I run a 400-person fintech conference in Chicago. Which companies should I pitch as sponsors?"
 
 ## Install
 - **Claude Code / Cursor / other Agent Plugin hosts:** install this repo as a plugin, or add the server yourself:
