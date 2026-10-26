@@ -22,7 +22,13 @@ Company-level data only: no people, emails or phone numbers. Every tool is read-
 - "I run a 400-person fintech conference in Chicago. Which companies should I pitch as sponsors?"
 
 ## Install
-- **Claude Code / Cursor / other Agent Plugin hosts:** install this repo as a plugin, or add the server yourself:
+- **Claude Code:** this repo is a plugin marketplace. Install the plugin (MCP server + skill) with:
+  ```
+  /plugin marketplace add rdoyle99/conferencedb-plugin
+  /plugin install conferencedb@conferencedb
+  ```
+  On Claude Code 2.1.275 or later, one step: `/plugin install conferencedb --marketplace rdoyle99/conferencedb-plugin`
+- **Server only (Claude Code, Cursor, other hosts):**
   `claude mcp add --transport http conferencedb https://conferencedatabase.com/api/mcp`
 - **Any MCP client:** use `.mcp.json` / `mcp.json` in this repo.
 

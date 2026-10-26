@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "conferencedb",
+  "owner": {
+    "name": "Sales.co",
+    "email": "support@conferencedatabase.com"
+  },
+  "metadata": {
+    "description": "ConferenceDB: read-only conference sponsor and exhibitor data for Claude Code."
+  },
+  "plugins": [
+    {
+      "name": "conferencedb",
+      "source": "./",
+      "description": "Look up which companies sponsor and exhibit at conferences and trade shows, when and where events run, and the sponsorship packages organizers publish.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Sales.co",
+        "email": "support@conferencedatabase.com"
+      },
+      "homepage": "https://conferencedatabase.com/mcp",
+      "repository": "https://github.com/rdoyle99/conferencedb-plugin",
+      "license": "MIT",
+      "keywords": ["conferences", "trade shows", "sponsors", "exhibitors", "sponsorship", "events", "mcp"],
+      "category": "data"
+    }
+  ]
+}
