@@ -1,0 +1,14 @@
+{
+  "name": "conferencedb",
+  "version": "1.0.1",
+  "description": "Look up which companies sponsor and exhibit at conferences and trade shows, when and where events run, and the sponsorship packages organizers publish.",
+  "author": {
+    "name": "Sales.co",
+    "email": "support@conferencedatabase.com",
+    "url": "https://conferencedatabase.com"
+  },
+  "homepage": "https://conferencedatabase.com/mcp",
+  "repository": "https://github.com/rdoyle99/conferencedb-plugin",
+  "license": "MIT",
+  "keywords": ["conferences", "trade shows", "sponsors", "exhibitors", "sponsorship", "events", "mcp"]
+}
