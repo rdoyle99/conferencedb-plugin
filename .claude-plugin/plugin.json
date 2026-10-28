@@ -1,6 +1,6 @@
 {
   "name": "conferencedb",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Look up which companies sponsor and exhibit at conferences and trade shows, when and where events run, and the sponsorship packages organizers publish.",
   "author": {
     "name": "Sales.co",

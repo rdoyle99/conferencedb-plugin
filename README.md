@@ -30,7 +30,7 @@ Company-level data only: no people, emails or phone numbers. Every tool is read-
   On Claude Code 2.1.275 or later, one step: `/plugin install conferencedb --marketplace rdoyle99/conferencedb-plugin`
 - **Server only (Claude Code, Cursor, other hosts):**
   `claude mcp add --transport http conferencedb https://conferencedatabase.com/api/mcp`
-- **Any MCP client:** use `.mcp.json` / `mcp.json` in this repo.
+- **Any MCP client:** `.mcp.json` is the Claude Code shape (`"type": "http"`); `mcp.json` is the Agent Plugins shape (`"type": "streamable-http"`). Both point at the same server.
 
 Also listed in the official MCP registry as `com.conferencedatabase/conferencedb`.
 

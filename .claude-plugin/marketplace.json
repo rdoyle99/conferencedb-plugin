@@ -13,7 +13,7 @@
       "name": "conferencedb",
       "source": "./",
       "description": "Look up which companies sponsor and exhibit at conferences and trade shows, when and where events run, and the sponsorship packages organizers publish.",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "author": {
         "name": "Sales.co",
         "email": "support@conferencedatabase.com"
